@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!--Stylesheet-->
+
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <img src="{% static './img/logopeque.jpg' %}" class="navbar-brand" alt="" width="80px">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="{% url 'index' %}">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'signup' %}">Registro</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header> 
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <img src="{%static './img/logopeque.jpg' %}" alt="" class="img-fluid" width="250px">
+            </div>
+        </div>
+    </div>
+
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-4 offset-md-4">
+
+        <form action="" method="post">
+          {% csrf_token %} 
+          <h3>Registro</h3>
+
+          <div class="row mb-3">
+            
+            <div class="col-sm-12">
+                <label for="inputEmail3" class="col-sm-3 col-form-label">Nombre</label>
+              <input type="text" placeholder="Ingrese el usuario" id="username" name="username" required>
+            </div>
+          </div>
+          <div class="row mb-3">
+
+            <div class="col-sm-12">
+                <label for="inputEmail3" class="col-sm-3 col-form-label">Email</label>
+              <input type="email" placeholder="Ingrese el correo" id="username" name="email" required>
+            </div>
+          </div>
+          <div class="row mb-3">
+            
+            <div class="col-sm-12">
+                <label for="inputPassword3" class="col-sm-3 col-form-label">Password</label>
+              <input type="password" placeholder="Ingrese la cotraseña" id="password" name="password1" required>
+            </div>
+          </div>
+          <div class="row mb-3">
+
+            <div class="col-sm-12">
+                <label for="inputPassword3" class="col-sm-3 col-form-label">Password (Repetir)</label>
+              <input type="password" placeholder="Ingrese la cotraseña" id="password" name="password2" required>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-sm-12">
+              <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+          </div>
+       
+        </form>
+
+      </div>
+    </div>
+<br>
+    <div class="row">
+      <a class="btn" href="{% url 'login' %}" >Yo tengo una cuenta</a>
+    </div>
+  </div>  
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
