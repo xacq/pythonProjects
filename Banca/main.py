@@ -1,13 +1,10 @@
 import sqlite3
-
-
 def sql_connection():
     try:
         conexion=sqlite3.connect('Cuenta_Corriente.db')
         return conexion
     except sqlite3.Error as er:
         print('SQLite error: %s' % (' '.join(er.args)))
-
 
 def sql_table(con):
     try:
@@ -28,7 +25,6 @@ def sql_table(con):
         con.commit()
     except sqlite3.Error as er:
         print('SQLite error: %s' % (' '.join(er.args)))
-
 
 class CuentaCorriente:
     rut=""
@@ -70,7 +66,6 @@ class CuentaCorriente:
         query=f"INSERT INTO MOVIMIENTOS (RUT_USUARIO,NUMERO_CUENTA) VALUES('{self.rut}',{Movimiento})"
         cursorObj.execute(query)
         con.commit()
-
 
 con=sql_connection()
 sql_table(con)
